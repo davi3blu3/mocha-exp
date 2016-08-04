@@ -18,6 +18,8 @@ describe('Empty Array', function() {
     // It block - describe a specific behavior you're testing
     it('should start empty', function() {
         assert.equal(arr.length, 0);
+        // also:
+        // expect(arr).to.be.empty;
     })
     
     it('should not be undefined', function() {
@@ -40,4 +42,22 @@ describe('Empty Array', function() {
         expect(arr[0]).to.be.undefined;
     })
     
+});
+
+describe('Simple Function', function() {
+    // subject of testing
+    var addition = function(x, y) {
+        return x + y;
+    };
+    
+    // Tests
+    it('should be an function', function() {
+        expect(addition).to.be.an('Function');
+    })
+    
+    // Asyncronous test? -- shows 'Pending'
+    it('should add 1+2'), function() {
+        var sum = addition(1,2);
+        expect(sum).to.equal(3);
+    }
 });
