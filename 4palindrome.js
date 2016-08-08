@@ -14,6 +14,22 @@ exports.isPalindrome = function(string) {
         j -= 1;
     }    
     return true;
+};
+
+exports.createPalindrome = function(string) {
+    var inputArray = string.split('').sort();
+    var pairs = [];
+    
+    for (i = 0; i < inputArray.length; i++) {
+        if (inputArray[i] === inputArray[i+1]) {
+            pairs.push(inputArray[i], inputArray[i+1]);
+            i = -1;
+            break;
+        }
+    }
+    
+    console.log(pairs);
+    return string;
 }
 
-exports.isPalindrome('aibohphobia');
+exports.createPalindrome("abcddeff");
